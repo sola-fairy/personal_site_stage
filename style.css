@@ -1,0 +1,336 @@
+:root {
+  --border-radius: 0.188rem;
+  --bg1: #fff;
+  --melon: hsla(0, 70%, 79%, 1); 
+  --wisteria: hsla(270, 70%, 79%, 1);
+  --papaya-whip: hsla(35, 100%, 92%, 1);
+  --black: hsla(0, 0%, 0%, 1);
+  --tea-green: hsla(90, 70%, 79%, 1);
+  --alert-read: https://sola-fairy.garden/assets/img/google_icons/alert_read.svg;
+  --alert-unread: https://sola-fairy.garden/assets/img/google_icons/alert_unread.svg;
+  --anchor: https://sola-fairy.garden/assets/img/google_icons/anchor.svg;
+  --bone: https://sola-fairy.garden/assets/img/google_icons/bone.svg;
+  --book-ribbon: https://sola-fairy.garden/assets/img/google_icons/book_ribbon.svg;
+  --brain: https://sola-fairy.garden/assets/img/google_icons/brain.svg;
+  --bug: https://sola-fairy.garden/assets/img/google_icons/bug.svg;
+  --calendar: https://sola-fairy.garden/assets/img/google_icons/calendar.svg;
+  --camera: https://sola-fairy.garden/assets/img/google_icons/camera.svg;
+  --code: https://sola-fairy.garden/assets/img/google_icons/code.svg;
+  --code-block: https://sola-fairy.garden/assets/img/google_icons/code_block.svg;
+  --coffee: https://sola-fairy.garden/assets/img/google_icons/coffee.svg;
+  --crescent-moon: https://sola-fairy.garden/assets/img/google_icons/crescent_moon.svg;
+  --diamond: https://sola-fairy.garden/assets/img/google_icons/diamond.svg;
+  --eco-leaf: https://sola-fairy.garden/assets/img/google_icons/eco_leaf.svg;
+  --explore: https://sola-fairy.garden/assets/img/google_icons/explore.svg;
+  --flower: https://sola-fairy.garden/assets/img/google_icons/flower.svg;
+  --forest: https://sola-fairy.garden/assets/img/google_icons/forest.svg;
+  --game-controller: https://sola-fairy.garden/assets/img/google_icons/game_controller.svg;
+  --genetics: https://sola-fairy.garden/assets/img/google_icons/genetics.svg;
+  --gift-box: https://sola-fairy.garden/assets/img/google_icons/gift_box.svg;
+  --heart-broken: https://sola-fairy.garden/assets/img/google_icons/heart_broken.svg;
+  --heart-smile: https://sola-fairy.garden/assets/img/google_icons/heart_smile.svg;
+  --hexagons: https://sola-fairy.garden/assets/img/google_icons/hexagons.svg;
+  --hot-tea: https://sola-fairy.garden/assets/img/google_icons/hot_tea.svg;
+  --invert-colors: https://sola-fairy.garden/assets/img/google_icons/invert_colors.svg;
+  --light-off: https://sola-fairy.garden/assets/img/google_icons/light_off.svg;
+  --list: https://sola-fairy.garden/assets/img/google_icons/list.svg;
+  --mail: https://sola-fairy.garden/assets/img/google_icons/mail.svg;
+  --medical-mask: https://sola-fairy.garden/assets/img/google_icons/medical_mask.svg;
+  --moon-stars: https://sola-fairy.garden/assets/img/google_icons/moon_stars.svg;
+  --mouse-friend: https://sola-fairy.garden/assets/img/google_icons/mouse_friend.svg;
+  --mystery: https://sola-fairy.garden/assets/img/google_icons/mystery.svg;
+  --noodle-bowl: https://sola-fairy.garden/assets/img/google_icons/noodle_bowl.svg;
+  --owl: https://sola-fairy.garden/assets/img/google_icons/owl.svg;
+  --pine-tree: https://sola-fairy.garden/assets/img/google_icons/pine_tree.svg;
+  --potted-plant: https://sola-fairy.garden/assets/img/google_icons/potted_plant.svg;
+  --raven: https://sola-fairy.garden/assets/img/google_icons/raven.svg;
+  --rocket: https://sola-fairy.garden/assets/img/google_icons/rocket.svg;
+  --rocket-launch: https://sola-fairy.garden/assets/img/google_icons/rocket_launch.svg;
+  --science-beaker: https://sola-fairy.garden/assets/img/google_icons/science_beaker.svg;
+  --sentiment-very-satisfied: https://sola-fairy.garden/assets/img/google_icons/sentiment_very_satisfied.svg;
+  --skip-next: https://sola-fairy.garden/assets/img/google_icons/skip_next.svg;
+  --skull: https://sola-fairy.garden/assets/img/google_icons/skull.svg;
+  --sprout: https://sola-fairy.garden/assets/img/google_icons/sprout.svg;
+  --star-shine: https://sola-fairy.garden/assets/img/google_icons/star_shine.svg;
+  --stars: https://sola-fairy.garden/assets/img/google_icons/stars.svg;
+  --sunshine: https://sola-fairy.garden/assets/img/google_icons/sunshine.svg;
+  --swords-crossed: https://sola-fairy.garden/assets/img/google_icons/swords_crossed.svg;
+  --thumbs-up: https://sola-fairy.garden/assets/img/google_icons/thumbs_up.svg;
+  --visibility: https://sola-fairy.garden/assets/img/google_icons/visibility.svg;
+  --visibility-off: https://sola-fairy.garden/assets/img/google_icons/visibility_off.svg;
+  --wand-stars: https://sola-fairy.garden/assets/img/google_icons/wand_stars.svg;
+  --water-drop: https://sola-fairy.garden/assets/img/google_icons/water_drop.svg;
+  --wine-glass: https://sola-fairy.garden/assets/img/google_icons/wine_glass.svg;
+  --wrench-circle-settings: https://sola-fairy.garden/assets/img/google_icons/wrench_circle_settings.svg;
+  --wrench-settings: https://sola-fairy.garden/assets/img/google_icons/wrench_settings.svg;
+}
+
+@font-face {
+  font-family: 'Cartograph Thin';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Cartograph Thin Italic';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-ThinItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Cartograph Regular';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Cartograph Regular Italic';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Cartograph Bold';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Cartograph Bold Italic';
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-BoldItalic.otf") format("opentype");
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+body {
+  background-color: var(--bg1);
+  color: var(--black);
+  font-family: 'LXGW WenKai Mono TC', sans-serif;
+  font-weight: 300;
+  margin: 0 1rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size:4em;
+  color:var(--melon);
+  font-family:'Sriracha', sans-serif;
+  text-shadow: 0.125rem 0.125rem 0 #000000b3;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+
+nav {
+  margin-top: 0.938rem; /*Is this necessary?*/
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul > li {
+    display: inline-block;
+  }
+
+  a:link, a:visited {
+    color: var(--black);
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0.313rem 0.625rem;
+    border-bottom: 0.063rem solid black;
+    border-right: 0.063rem solid black;
+    box-shadow: 0.188rem 0.188rem 0 0 var(--wisteria);
+  }
+
+  a:focus, a:active, a:hover {
+    animation: wiggle .5s linear 3;
+    color: var(--melon);
+    font-family: 'Cartograph Thin Italic', serif;
+  }
+}
+
+hr {
+  height: 0.063rem;
+  background: var(--black);
+  border: 0;
+  margin: 0.938rem;
+}
+
+main {
+  width: 90vw;
+  margin: auto;
+}
+
+.portfolio-links {
+  display: flex;
+  justify-content: center;
+
+  a:link, a:visited {
+    line-height: 1.8;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  a:focus, a:active, a:hover {
+    background-color: var(--tea-green);
+    font-family: 'Cartograph Thin Italic';
+  }
+
+  a.left:before {
+    transition: .6s;
+    content: "\2190";
+    font-size: .1rem;
+    margin-right: 0;
+    opacity: 0;
+  }
+
+  a.left:hover:before {
+    content: "\2190";
+    transform: scale(16);
+    transform-origin: center;
+    margin-right: 1.1rem;
+    opacity: 1;
+  }
+
+  a.right:after {
+    content: "\2192";
+    font-size: .1rem;
+    margin-left: 0;
+    transition: .6s;
+    opacity: 0;
+  }
+
+  a.right:hover:after {
+    content: "\2192";
+    transform: scale(16);
+    transform-origin: center;
+    margin-left: 1.1rem;
+    opacity: 1;
+  }
+
+}
+
+article {
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: justify;
+  }
+  
+  a:link, a:visited {
+    background-image: linear-gradient(to right, color1, color2);
+    background-repeat: no-repeat;
+    background-size: 100% .2em;
+    background-position: 0 88%;
+    transition: background-size 250ms ease-in;
+  }
+
+  a:hover {
+    background-size: 100% 88%;
+  }
+
+  i, b {
+    font-family: 'Cartograph Bold Italic', serif;
+    color: var(--melon);
+  }
+}
+
+h1 {
+  font-family: 'Cartograph Thin', serif;
+  color: var(--melon);
+  text-shadow: 0.125rem 0.125rem 0 #000000b3;
+  font-size: 2.75em;
+}
+
+h2 {
+  font-family: 'Cartograph Thin Italic', serif;
+  color: var(--wisteria);
+  font-size: 2.5em;
+  text-shadow: 0.125rem 0.125rem 0 #000000b3;
+}
+
+h3 {
+  font-family: 'Sriracha', sans-serif;
+  color: var(--tea-green);
+  font-size: 2em;
+  text-shadow:
+    -0.063rem -0.063rem 0 black,
+    0.063rem -0.063rem 0 black,
+    -0.063rem 0.063rem 0 black,
+    0.063rem 0.063rem 0 black;
+}
+
+.preview {
+  anchor-name: --preview;
+}
+
+.preview-cap {
+  position: fixed;
+  position-anchor: --preview;
+  inset-block-start: anchor(--preview top);
+  justify-self: anchor-center;
+}
+
+footer {
+  font-size: .5em;
+}
