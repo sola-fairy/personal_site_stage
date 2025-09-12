@@ -107,7 +107,7 @@ header {
 }
 
 .title {
-  font-size:var(--size-step-5);
+  font-size:4em;
   color:var(--melon);
   font-family:'Sriracha', sans-serif;
   text-shadow: 0.125rem 0.125rem 0 #000000b3;
