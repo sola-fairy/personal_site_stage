@@ -7,63 +7,6 @@
   --black: hsla(0, 0%, 0%, 1);
   --tea-green: #c9efa4;
   --white: hsla(0, 0%, 100%, 1);
-  --alert-read: https://sola-fairy.garden/assets/img/google_icons/alert_read.svg;
-  --alert-unread: https://sola-fairy.garden/assets/img/google_icons/alert_unread.svg;
-  --anchor: https://sola-fairy.garden/assets/img/google_icons/anchor.svg;
-  --bone: https://sola-fairy.garden/assets/img/google_icons/bone.svg;
-  --book-ribbon: https://sola-fairy.garden/assets/img/google_icons/book_ribbon.svg;
-  --brain: https://sola-fairy.garden/assets/img/google_icons/brain.svg;
-  --bug: https://sola-fairy.garden/assets/img/google_icons/bug.svg;
-  --calendar: https://sola-fairy.garden/assets/img/google_icons/calendar.svg;
-  --camera: https://sola-fairy.garden/assets/img/google_icons/camera.svg;
-  --code: https://sola-fairy.garden/assets/img/google_icons/code.svg;
-  --code-block: https://sola-fairy.garden/assets/img/google_icons/code_block.svg;
-  --coffee: https://sola-fairy.garden/assets/img/google_icons/coffee.svg;
-  --crescent-moon: https://sola-fairy.garden/assets/img/google_icons/crescent_moon.svg;
-  --diamond: https://sola-fairy.garden/assets/img/google_icons/diamond.svg;
-  --eco-leaf: https://sola-fairy.garden/assets/img/google_icons/eco_leaf.svg;
-  --explore: https://sola-fairy.garden/assets/img/google_icons/explore.svg;
-  --flower: https://sola-fairy.garden/assets/img/google_icons/flower.svg;
-  --forest: https://sola-fairy.garden/assets/img/google_icons/forest.svg;
-  --game-controller: https://sola-fairy.garden/assets/img/google_icons/game_controller.svg;
-  --genetics: https://sola-fairy.garden/assets/img/google_icons/genetics.svg;
-  --gift-box: https://sola-fairy.garden/assets/img/google_icons/gift_box.svg;
-  --heart-broken: https://sola-fairy.garden/assets/img/google_icons/heart_broken.svg;
-  --heart-smile: https://sola-fairy.garden/assets/img/google_icons/heart_smile.svg;
-  --hexagons: https://sola-fairy.garden/assets/img/google_icons/hexagons.svg;
-  --hot-tea: https://sola-fairy.garden/assets/img/google_icons/hot_tea.svg;
-  --invert-colors: https://sola-fairy.garden/assets/img/google_icons/invert_colors.svg;
-  --light-off: https://sola-fairy.garden/assets/img/google_icons/light_off.svg;
-  --list: https://sola-fairy.garden/assets/img/google_icons/list.svg;
-  --mail: https://sola-fairy.garden/assets/img/google_icons/mail.svg;
-  --medical-mask: https://sola-fairy.garden/assets/img/google_icons/medical_mask.svg;
-  --moon-stars: https://sola-fairy.garden/assets/img/google_icons/moon_stars.svg;
-  --mouse-friend: https://sola-fairy.garden/assets/img/google_icons/mouse_friend.svg;
-  --mystery: https://sola-fairy.garden/assets/img/google_icons/mystery.svg;
-  --noodle-bowl: https://sola-fairy.garden/assets/img/google_icons/noodle_bowl.svg;
-  --owl: https://sola-fairy.garden/assets/img/google_icons/owl.svg;
-  --pine-tree: https://sola-fairy.garden/assets/img/google_icons/pine_tree.svg;
-  --potted-plant: https://sola-fairy.garden/assets/img/google_icons/potted_plant.svg;
-  --raven: https://sola-fairy.garden/assets/img/google_icons/raven.svg;
-  --rocket: https://sola-fairy.garden/assets/img/google_icons/rocket.svg;
-  --rocket-launch: https://sola-fairy.garden/assets/img/google_icons/rocket_launch.svg;
-  --science-beaker: https://sola-fairy.garden/assets/img/google_icons/science_beaker.svg;
-  --sentiment-very-satisfied: https://sola-fairy.garden/assets/img/google_icons/sentiment_very_satisfied.svg;
-  --skip-next: https://sola-fairy.garden/assets/img/google_icons/skip_next.svg;
-  --skull: https://sola-fairy.garden/assets/img/google_icons/skull.svg;
-  --sprout: https://sola-fairy.garden/assets/img/google_icons/sprout.svg;
-  --star-shine: https://sola-fairy.garden/assets/img/google_icons/star_shine.svg;
-  --stars: https://sola-fairy.garden/assets/img/google_icons/stars.svg;
-  --sunshine: https://sola-fairy.garden/assets/img/google_icons/sunshine.svg;
-  --swords-crossed: https://sola-fairy.garden/assets/img/google_icons/swords_crossed.svg;
-  --thumbs-up: https://sola-fairy.garden/assets/img/google_icons/thumbs_up.svg;
-  --visibility: https://sola-fairy.garden/assets/img/google_icons/visibility.svg;
-  --visibility-off: https://sola-fairy.garden/assets/img/google_icons/visibility_off.svg;
-  --wand-stars: https://sola-fairy.garden/assets/img/google_icons/wand_stars.svg;
-  --water-drop: https://sola-fairy.garden/assets/img/google_icons/water_drop.svg;
-  --wine-glass: https://sola-fairy.garden/assets/img/google_icons/wine_glass.svg;
-  --wrench-circle-settings: https://sola-fairy.garden/assets/img/google_icons/wrench_circle_settings.svg;
-  --wrench-settings: https://sola-fairy.garden/assets/img/google_icons/wrench_settings.svg;
 }
 
 @font-face {
@@ -155,27 +98,36 @@ header {
   color:var(--melon);
   font-family:'Sriracha', sans-serif;
   text-shadow: 0.125rem 0.125rem 0 #000000b3;
+  margin-bottom: 25px;
+  anchor-name: --title-anchor;
 }
 
 @keyframes wiggle {
   0% {
-    transform: scale(1.1);
+    transform: scale(1);
   }
   25% {
     transform: scale(1.1) rotate(15deg);
+    margin-left: 15px;
+    margin-right: 15px;
   }
   50% {
     transform: scale(1.1) rotate(0deg);
   }
   75% {
     transform: scale(1.1) rotate(-15deg);
+    margin-left: 15px;
+    margin-right: 15px;
   }
   100% {
-    transform: scale(1.1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 
 nav {
+  position: fixed;
+  position-anchor: --title-anchor;
+  top: calc(anchor(bottom) + .5rem);
 
   ul {
     list-style-type: none;
@@ -185,6 +137,7 @@ nav {
   
   ul > li {
     display: inline-block;
+    margin: 10px;
   }
 
   a:link, a:visited {
@@ -216,8 +169,10 @@ hr {
 }
 
 main {
+  position: relative;
   width: 90vw;
-  margin: 1rem auto;
+  top: 5rem;
+  margin: auto;
 }
 
 .portfolio-links {
@@ -227,57 +182,84 @@ main {
   a:link, a:visited {
     display: flex;
     align-items: center;
+    font-family: 'Cartograph Regular';
     line-height: 1.8;
-    background-color: var(--wisteria);
-    background-size: 125px;
-    color: var(--white);
-    text-shadow: rgb(0, 0, 0) 1px 1px 2px;
+    color: var(--melon);
     text-decoration: none;
-    padding: 5px 20px;
-    border-radius: 5px;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    transition: .5s;
+  }
+
+  a.right {
+    background-image: linear-gradient(to right, var(--melon), var(--tea-green));
+    background-size: 10px 3px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+  }
+
+  a.left {
+    background-image: linear-gradient(to right, var(--tea-green), var(--melon));
+    background-size: 10px 3px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    margin-right: 10px;
   }
 
   a:focus, a:active, a:hover {
-    background-color: var(--tea-green);
-    background-size: calc(125px + 2%);
-    font-family: 'Cartograph Thin Italic';
+    font-family: 'Cartograph Regular Italic';
+    animation: fillLine 1500ms 1;
+    animation-fill-mode: forwards;
   }
 
   a.left:before {
-    transition: .6s;
-    content: "\2190";
-    font-size: .1rem;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-arrow-left-icon lucide-arrow-left'%3E%3Cpath d='m12 19-7-7 7-7'/%3E%3Cpath d='M19 12H5'/%3E%3C/svg%3E");
     margin-right: 0;
     opacity: 0;
+    color: var(--tea-green);
   }
 
   a.left:hover:before {
-    content: "\2190";
-    transform: scale(16);
-    transform-origin: center;
-    margin-right: 1.1rem;
-    opacity: 1;
+    animation: fadeInLeft 1500ms 1;
+    animation-fill-mode: forwards;
   }
 
   a.right:after {
-    content: "\2192";
-    font-size: .1rem;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-arrow-right-icon lucide-arrow-right'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
     margin-left: 0;
-    transition: .6s;
     opacity: 0;
   }
 
   a.right:hover:after {
-    content: "\2192";
-    transform: scale(16);
-    transform-origin: center;
-    margin-left: 1.1rem;
-    opacity: 1;
+    animation: fadeInRight 1500ms 1;
+    animation-fill-mode: forwards;
   }
+}
 
+@keyframes fillLine {
+  to {
+    background-size: 125px 3px;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate(-25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(25px, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-25px, 0);
+  }
 }
 
 article {
@@ -351,4 +333,41 @@ iframe {
 
 footer {
   font-size: .5em;
+}
+
+@keyframes bounce {
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+}
+
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 
+    'FILL' 0, 
+    'wght' 300, 
+    'GRAD' 0, 
+    'opsz' 48;
+  color: var(--wisteria);
+}
+
+.bounce:hover {
+  animation: bounce 545ms linear infinite;
+  transform-origin: center center;
 }
