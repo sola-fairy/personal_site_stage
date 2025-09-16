@@ -1,8 +1,11 @@
 :root {
+  --color-scheme: light dark;
   --border-radius: 0.188rem;
   --bg1: #fff;
-  --melon: hsla(0, 70%, 79%, 1); 
-  --wisteria: hsla(270, 70%, 79%, 1);
+  --bg2: #181717;
+  --melon: #efa4a4;
+  --wisteria: #c9a4ef;
+  --quote-bg: #f7efff;
   --papaya-whip: hsla(35, 100%, 92%, 1);
   --black: hsla(0, 0%, 0%, 1);
   --tea-green: #c9efa4;
@@ -15,39 +18,75 @@
   --size-step-3: clamp(1.728rem, 1.5938rem + 0.6711vw, 2.16rem);
   --size-step-4: clamp(2.0736rem, 1.9125rem + 0.8053vw, 2.592rem);
   --size-step-5: clamp(2.4883rem, 2.2951rem + 0.9663vw, 3.1104rem);
+  --text-shadow-dark: 0.125rem 0.125rem 0 #df1212;
+  --gradient: linear-gradient(
+    55deg,
+    hsl(312deg 29% 97%) 0%,
+    hsl(231deg 88% 90%) 20%,
+    hsl(196deg 81% 75%) 40%,
+    hsl(143deg 40% 91%) 60%,
+    hsl(31deg 82% 82%) 80%,
+    hsl(326deg 98% 75%) 100%
+  );
+  --rainbow: linear-gradient(
+    55deg,
+    hsl(206deg 95% 75%) 0%,
+    hsl(178deg 71% 67%) 29%,
+    hsl(95deg 73% 82%) 43%,
+    hsl(39deg 100% 79%) 57%,
+    hsl(7deg 100% 80%) 71%,
+    hsl(326deg 98% 75%) 100%
+  );
+  --rainbow-rev: linear-gradient(
+    55deg,
+    hsl(326deg 98% 75%) 0%,
+    hsl(7deg 100% 80%) 29%,
+    hsl(39deg 100% 79%) 43%,
+    hsl(95deg 73% 82%) 57%,
+    hsl(178deg 71% 67%) 71%,
+    hsl(206deg 95% 75%) 100%
+  );
 }
 
 @font-face {
-  font-family: 'Cartograph Thin';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Thin.otf") format("opentype");
+  font-family: "Cartograph Thin";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Thin.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Cartograph Thin Italic';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-ThinItalic.otf") format("opentype");
+  font-family: "Cartograph Thin Italic";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-ThinItalic.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Cartograph Regular';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Regular.otf") format("opentype");
+  font-family: "Cartograph Regular";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Regular.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Cartograph Regular Italic';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-RegularItalic.otf") format("opentype");
+  font-family: "Cartograph Regular Italic";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-RegularItalic.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Cartograph Bold';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Bold.otf") format("opentype");
+  font-family: "Cartograph Bold";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-Bold.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Cartograph Bold Italic';
-  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-BoldItalic.otf") format("opentype");
+  font-family: "Cartograph Bold Italic";
+  src: url("https://sola-fairy.garden/assets/other/fonts/Cartograph/CartographCF-BoldItalic.otf")
+    format("opentype");
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -66,38 +105,47 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
-}
-
-p {
   text-wrap: pretty;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-  margin: 1rem;
 }
 
 body {
   background-color: var(--bg1);
   color: var(--black);
-  font-family: 'LXGW WenKai Mono TC', sans-serif;
-  font-weight: 300;
-  margin: 5rem 1rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 1rem;
+}
+
+body > * + * {
+  margin-top: 1rem;
 }
 
 header {
@@ -107,12 +155,10 @@ header {
 }
 
 .title {
-  font-size:4em;
-  color:var(--melon);
-  font-family:'Sriracha', sans-serif;
+  font-size: 4em;
+  color: var(--melon);
+  font-family: "Sriracha", sans-serif;
   text-shadow: 0.125rem 0.125rem 0 #000000b3;
-  margin-bottom: 1rem;
-  anchor-name: --title-anchor;
 }
 
 @keyframes wiggle {
@@ -138,24 +184,27 @@ header {
 }
 
 nav {
-  position: fixed;
-  position-anchor: --title-anchor;
-  top: calc(anchor(bottom) + .5rem);
+  margin-top: 2rem;
 
   ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-  }
-  
-  ul > li {
-    display: inline-block;
-    margin: 0.625rem;
+    display: flex;
+    width: calc(45vw * (2 / 3));
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  a:link, a:visited {
+  ul > li {
+    display: inline-block;
+  }
+
+  a:link,
+  a:visited {
     display: flex;
     color: var(--black);
+    font-family: "Montserrat Alternates", sans-serif;
     font-weight: 400;
     text-decoration: none;
     border-bottom-right-radius: var(--border-radius);
@@ -167,19 +216,14 @@ nav {
     box-shadow: 0.188rem 0.188rem 0 0 var(--wisteria);
   }
 
-  a:focus, a:active, a:hover {
-    animation: wiggle .5s linear 3;
+  a:focus,
+  a:active,
+  a:hover {
+    animation: wiggle 0.5s linear 3;
     color: var(--melon);
-    font-family: 'Cartograph Thin Italic', serif;
+    font-family: "Cartograph Thin Italic", serif;
   }
 }
-
-/*main {
-  position: relative;
-  width: 50vw;
-  top: 5rem;
-  margin: auto;
-}*/
 
 main {
   display: flex;
@@ -188,17 +232,17 @@ main {
   justify-content: space-between;
   width: 90vw;
   padding: calc(2vw + 1%);
-  margin-top: 3rem;
 }
 
 .portfolio-links {
   display: flex;
   justify-content: center;
 
-  a:link, a:visited {
+  a:link,
+  a:visited {
     display: flex;
     align-items: center;
-    font-family: 'Cartograph Regular';
+    font-family: "Cartograph Regular";
     line-height: 1.8;
     color: var(--melon);
     text-decoration: none;
@@ -220,8 +264,10 @@ main {
     margin-right: 0.625rem;
   }
 
-  a:focus, a:active, a:hover {
-    font-family: 'Cartograph Regular Italic';
+  a:focus,
+  a:active,
+  a:hover {
+    font-family: "Cartograph Regular Italic";
     animation: fillLine 1500ms 1;
     animation-fill-mode: forwards;
   }
@@ -284,56 +330,175 @@ article {
   flex-direction: column;
   width: 100%;
 
-  p {
-    text-align: justify;
-  }
-  
-  a:link, a:visited {
+  a:link,
+  a:visited {
     color: var(--melon);
     text-decoration: none;
-    font-family: 'Cartograph Regular';
+    font-family: "Cartograph Thin Italic";
+    border-bottom: 1px solid var(--wisteria);
   }
 
   a:hover {
-    font-family: 'Cartograph Regular Italic';
+    font-family: "Cartograph Regular Italic";
   }
 
-  i, b {
-    font-family: 'Cartograph Bold Italic', serif;
+  i,
+  b {
+    font-family: "Cartograph Bold Italic", serif;
     color: var(--melon);
+  }
+
+  p {
+    line-height: 1.7;
+    text-indent: 2.5rem;
+  }
+
+  blockquote {
+    margin-left: calc(2vw + 1%);
+    margin-right: calc(2vw + 1%);
+    background: var(--gradient);
+    border-radius: 20px;
+    padding: 20px;
+    anchor-name: --quote-anchor;
+    font-style: italic;
+  }
+
+  /*blockquote:before {
+    content: "\201C";
+    color: #fc98c0;
+    font-size: calc(var(--size-step-5) + 4em);
+    font-family: "Cartograph Regular", serif;
+    position: absolute;
+    position-anchor: --quote-anchor;
+    left: calc(anchor(start) - 4rem);
+    line-height: 0.35;
+    font-style: normal;
+  }*/
+
+  blockquote:before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23fc98c0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-message-square-quote-icon lucide-message-square-quote'%3E%3Cpath d='M14 14a2 2 0 0 0 2-2V8h-2'/%3E%3Cpath d='M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z'/%3E%3Cpath d='M8 14a2 2 0 0 0 2-2V8H8'/%3E%3C/svg%3E");
+    position: absolute;
+    position-anchor: --quote-anchor;
+    left: calc(anchor(start) - 4rem);
+    transform: scaleX(-1);
+  }
+
+  blockquote:after {
+    content: "\201D";
+    color: #fc98c0;
+    font-size: calc(var(--size-step-5) + 4em);
+    font-family: "Cartograph Regular", serif;
+    position: absolute;
+    position-anchor: --quote-anchor;
+    right: calc(anchor(end) - 4rem);
+    line-height: 0.3;
+    font-style: normal;
+  }
+
+  blockquote p {
+    margin-bottom: 0;
+    text-indent: 0;
+    background: var(--bg1);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  blockquote em {
+    background-image: var(--rainbow);
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    font-family: "Cartograph Regular Italic", serif;
   }
 }
 
-h1 {
-  font-family: 'Cartograph Thin', serif;
+article * {
+  margin-bottom: 2rem;
+}
+
+p > img {
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 5px solid var(--wisteria);
+}
+
+em {
+  font-family: "Cartograph Regular Italic", serif;
+  background-image: var(--rainbow);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+
+strong {
+  font-family: "Cartograph Regular", serif;
+  font-weight: 400;
+  color: var(--black);
+  padding: 5px 10px;
+  border-end-end-radius: 5px;
+  background: #efa4a436;
+  border-left: 3px solid var(--melon);
+  border-bottom: 2px dashed var(--melon);
+  font-size: 1.25em;
+  anchor-name: --strong-anchor;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  display: block;
+  text-indent: 0;
+}
+
+strong:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='%23efa4a436' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-alert-icon lucide-circle-alert'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='12'/%3E%3Cline x1='12' x2='12.01' y1='16' y2='16'/%3E%3C/svg%3E");
+  position: absolute;
+  position-anchor: --strong-anchor;
+  left: calc(anchor(start) - 2.5rem);
+  margin-top: -5px;
+  transform: scale(1.25);
+}
+
+/*h1 {
+  font-family: "Cartograph Thin", serif;
   color: var(--melon);
   text-shadow: 0.125rem 0.125rem 0 #000000b3;
   font-size: var(--size-step-5);
+  line-height: 1;
+}*/
+
+h1 {
+  font-family: "Cartograph Thin", serif;
+  background-image: var(--rainbow);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--size-step-5);
+  line-height: 1;
+  width: fit-content;
 }
 
 h2 {
-  font-family: 'Cartograph Thin Italic', serif;
-  color: var(--wisteria);
+  font-family: "Cartograph Thin Italic", serif;
   font-size: var(--size-step-4);
-  text-shadow: 0.125rem 0.125rem 0 #000000b3;
+  background-image: var(--rainbow-rev);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 }
 
 h3 {
-  font-family: 'Sriracha', sans-serif;
+  font-family: "Sriracha", sans-serif;
   color: var(--tea-green);
   font-size: var(--size-step-3);
-  text-shadow:
-    -0.063rem -0.063rem 0 black,
-    0.063rem -0.063rem 0 black,
-    -0.063rem 0.063rem 0 black,
-    0.063rem 0.063rem 0 black;
+  text-shadow: -0.063rem -0.063rem 0 black, 0.063rem -0.063rem 0 black,
+    -0.063rem 0.063rem 0 black, 0.063rem 0.063rem 0 black;
 }
 
 .preview {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 iframe {
@@ -347,7 +512,7 @@ iframe {
 }
 
 footer {
-  font-size: .5em;
+  font-size: 0.5em;
 }
 
 @keyframes bounce {
@@ -362,8 +527,20 @@ footer {
   }
 }
 
+@keyframes ravenLine {
+  25% {
+    background-size: 25px 1px;
+  }
+  50% {
+    background-size: 10px 1px;
+  }
+  75% {
+    background-size: 50px 1px;
+  }
+}
+
 .icon {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-size: 3rem;
   line-height: 1;
   letter-spacing: normal;
@@ -372,14 +549,10 @@ footer {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  font-variation-settings: 
-    'FILL' 0, 
-    'wght' 300, 
-    'GRAD' 0, 
-    'opsz' 48;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
   color: var(--wisteria);
 }
 
@@ -387,4 +560,118 @@ footer {
   animation: bounce 545ms linear infinite;
   transform-origin: center center;
   cursor: pointer;
+}
+
+.shadow {
+  width: fit-content;
+  background-image: linear-gradient(to right, var(--wisteria));
+  background-size: 10px 1px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.shadow:hover {
+  animation: ravenLine 545ms linear infinite;
+}
+
+ul.window {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  width: 50vw;
+
+  ul.window > * {
+    margin: 0;
+  }
+
+  li {
+    background: var(--gradient);
+    border-radius: 20px;
+    margin-left: calc(2vw + 1%);
+    margin-right: calc(2vw + 1%);
+    font-size: var(--size-step-2);
+    font-family: "Cartograph Thin Italic", serif;
+    border: 1px solid black;
+    text-indent: 25px;
+
+    li.inner {
+      background: var(--bg1);
+      font-size: var(--size-step--1);
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      font-family: "Montserrat Alternates", sans-serif;
+      border-top: 1px solid black;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+      padding: 20px;
+      text-indent: 0;
+      margin: 0;
+    }
+  }
+
+  em {
+    background-image: var(--rainbow);
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+ul.inner-window {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.browser-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 5px #000000;
+}
+
+.browser-icons {
+  display: flex;
+  transform: scale(0.75);
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.browser-icons * {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg2);
+    color: var(--white);
+  }
+
+  nav {
+    & a:link,
+    & a:visited {
+      color: var(--white);
+      border: 0.063rem solid var(--white);
+    }
+    & a:hover {
+      color: var(--melon);
+    }
+  }
+
+  strong {
+    color: var(--white);
+  }
+
+  li.inner {
+    color: #000;
+  }
+
+  blockquote {
+    color: #000;
+  }
 }
