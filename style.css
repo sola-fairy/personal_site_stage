@@ -59,6 +59,15 @@
     hsl(178deg 71% 67%) 71%,
     hsl(206deg 95% 75%) 100%
   );
+  --purgreen: linear-gradient(
+    90deg,
+    hsl(164deg 75% 70%) 0%,
+    hsl(199deg 100% 69%) 20%,
+    hsl(283deg 86% 80%) 40%,
+    hsl(283deg 86% 80%) 60%,
+    hsl(199deg 100% 69%) 80%,
+    hsl(164deg 75% 70%) 100%
+  );
 }
 
 @font-face {
@@ -174,6 +183,10 @@ header {
   color: var(--bright-pink);
   font-family: "Cartograph Thin", serif;
   text-align: center;
+  background-color: var(--bg1);
+  padding: 20px;
+  border: 2px solid var(--grey-border);
+  border-radius: 3px;
 }
 
 nav {
@@ -241,18 +254,17 @@ article {
   a:link,
   a:visited {
     color: var(--dark-blue);
-    text-decoration: none;
-    font-family: "Cartograph Regular Italic";
     background-image: var(--gradient);
     background-size: 0% 100%;
     background-repeat: no-repeat;
     border-radius: 3px;
+    font-weight: bold;
     text-decoration: underline 1px dotted;
     display: inline-flex;
     align-items: center;
     text-indent: 0;
     margin: 0;
-    transform: translate(0px, 5px);
+    transform: translate(0px, 3px);
   }
 
   a:hover {
@@ -354,6 +366,7 @@ strong {
   display: flex;
   align-items: center;
   text-indent: 0;
+  margin-bottom: 0;
 }
 
 strong:before {
@@ -406,7 +419,7 @@ h2 {
 h3 {
   font-family: "Sriracha", sans-serif;
   font-size: var(--size-step-3);
-  background-image: var(--purpink);
+  background-image: var(--purgreen);
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent;
@@ -475,75 +488,6 @@ footer {
   color: var(--wisteria);
 }
 
-.bounce:hover {
-  animation: bounce 545ms linear infinite;
-  transform-origin: center center;
-  cursor: pointer;
-}
-
-.shadow {
-  width: fit-content;
-  background-image: linear-gradient(to right, var(--wisteria));
-  background-size: 10px 1px;
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-}
-
-.shadow:hover {
-  animation: ravenLine 545ms linear infinite;
-}
-
-ul.window {
-  list-style: none;
-  padding: 0;
-  margin: auto;
-  width: 50vw;
-
-  ul.window > * {
-    margin: 0;
-  }
-
-  li {
-    background: var(--gradient);
-    border-radius: 20px;
-    margin-left: calc(2vw + 1%);
-    margin-right: calc(2vw + 1%);
-    font-size: var(--size-step-2);
-    font-family: "Pixelify Sans", serif;
-    border: 3px dotted black;
-    text-indent: 25px;
-
-    li.inner {
-      background: var(--bg1);
-      font-size: var(--size-step-0);
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      font-family: "Pixelify Sans", serif;
-      border-top: 3px dotted black;
-      border-bottom: none;
-      border-left: none;
-      border-right: none;
-      padding: 20px;
-      text-indent: 0;
-      margin: 0;
-    }
-  }
-
-  em {
-    background-image: var(--rainbow);
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-ul.inner-window {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  margin: 0;
-}
-
 .browser {
   display: flex;
   flex-direction: column;
@@ -552,7 +496,6 @@ ul.inner-window {
   background-image: var(--gradient);
   border-radius: 20px;
   border: 3px dotted #000;
-  margin-bottom: 2rem;
 }
 
 .browser-bar {
@@ -598,21 +541,25 @@ ul.inner-window {
 
 .window.book {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .window p {
-  width: 55%;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 0;
+  margin: calc(2vw + 1%);
+  text-align: right;
 }
 
 .window img {
   margin: auto;
   border-radius: 20px;
   filter: drop-shadow(10px 10px 5px #000);
+  transition: 1s;
+  width: calc(var(--size-step-5) * 4);
+}
+
+.window img:hover {
+  transform: scale(1.5);
+  border-radius: 0;
 }
 
 .window-title {
@@ -628,7 +575,8 @@ ul.inner-window {
   justify-content: flex-start;
   width: 25vw;
   min-width: 250px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f5e8e1b0;
   border: 2px solid #525252;
   height: 15rem;
@@ -737,6 +685,11 @@ ul.inner-window {
 
   header {
     background-color: var(--bg2);
+  }
+
+  .title {
+    background-color: var(--bg2);
+    border: 2px solid var(--bright-pink);
   }
 
   article {
