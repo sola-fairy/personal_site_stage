@@ -21,6 +21,8 @@
   --text-shadow-dark: 0.125rem 0.125rem 0 #df1212;
   --bright-pink: #fc98c0;
   --dark-blue: #385dc1;
+  --pink-bg: #ffefef;
+  --grey-border: #525252;
   --purpink: linear-gradient(
     90deg,
     hsl(273deg 68% 69%) 0%,
@@ -144,7 +146,7 @@ h6 {
 }
 
 body {
-  background-color: var(--bg1);
+  background-color: var(--pink-bg);
   color: var(--black);
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
@@ -163,35 +165,15 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 75rem;
+  padding: calc(2vw + 1%);
 }
 
 .title {
   font-size: 4em;
-  color: var(--melon);
-  font-family: "Sriracha", sans-serif;
-  text-shadow: 0.125rem 0.125rem 0 #000000b3;
-}
-
-@keyframes wiggle {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1) rotate(15deg);
-    margin-left: 0.938rem;
-    margin-right: 0.938rem;
-  }
-  50% {
-    transform: scale(1.1) rotate(0deg);
-  }
-  75% {
-    transform: scale(1.1) rotate(-15deg);
-    margin-left: 0.938rem;
-    margin-right: 0.938rem;
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
+  color: var(--bright-pink);
+  font-family: "Cartograph Thin", serif;
+  text-align: center;
 }
 
 nav {
@@ -201,38 +183,37 @@ nav {
     list-style-type: none;
     padding: 0;
     display: flex;
-    width: calc(45vw * (2 / 3));
-    justify-content: space-evenly;
+    width: 45vw;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
   }
 
   ul > li {
     display: inline-block;
+    margin: 5px;
+    background-color: #f5e8e1b0;
   }
 
   a:link,
   a:visited {
     display: flex;
     color: var(--black);
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 400;
+    font-family: "Pixelify Sans", sans-serif;
     text-decoration: none;
-    border-bottom-right-radius: var(--border-radius);
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 3px;
     padding: 0.313rem 0.625rem;
-    border-bottom: 0.063rem solid black;
-    border-right: 0.063rem solid black;
-    box-shadow: 0.188rem 0.188rem 0 0 var(--wisteria);
+    border: 2px solid var(--grey-border);
   }
 
   a:focus,
   a:active,
   a:hover {
-    animation: wiggle 0.5s linear 3;
-    color: var(--melon);
-    font-family: "Cartograph Thin Italic", serif;
+    color: var(--bright-pink);
+    outline-offset: -8px;
+    outline-style: dotted;
+    outline-width: 2px;
+    outline-color: #000;
   }
 }
 
@@ -241,98 +222,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 90vw;
-  padding: calc(2vw + 1%);
-}
-
-.portfolio-links {
-  display: flex;
-  justify-content: center;
-
-  a:link,
-  a:visited {
-    display: flex;
-    align-items: center;
-    font-family: "Cartograph Regular";
-    line-height: 1.8;
-    color: var(--melon);
-    text-decoration: none;
-  }
-
-  a.right {
-    background-image: linear-gradient(to right, var(--melon), var(--tea-green));
-    background-size: 0.625rem 0.188rem;
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    margin-left: 0.625rem;
-  }
-
-  a.left {
-    background-image: linear-gradient(to right, var(--tea-green), var(--melon));
-    background-size: 0.625rem 0.188rem;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    margin-right: 0.625rem;
-  }
-
-  a:focus,
-  a:active,
-  a:hover {
-    font-family: "Cartograph Regular Italic";
-    animation: fillLine 1500ms 1;
-    animation-fill-mode: forwards;
-  }
-
-  a.left:before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-arrow-left-icon lucide-arrow-left'%3E%3Cpath d='m12 19-7-7 7-7'/%3E%3Cpath d='M19 12H5'/%3E%3C/svg%3E");
-    margin-right: 0;
-    opacity: 0;
-    color: var(--tea-green);
-  }
-
-  a.left:hover:before {
-    animation: fadeInLeft 1500ms 1;
-    animation-fill-mode: forwards;
-  }
-
-  a.right:after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-arrow-right-icon lucide-arrow-right'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E");
-    margin-left: 0;
-    opacity: 0;
-  }
-
-  a.right:hover:after {
-    animation: fadeInRight 1500ms 1;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes fillLine {
-  to {
-    background-size: 7.813rem 0.188rem;
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate(-1.563rem, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(1.563rem, 0);
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate(1.563rem, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-1.563rem, 0);
-  }
+  max-width: 75rem;
 }
 
 article {
@@ -340,17 +230,34 @@ article {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: var(--bg1);
+  border-radius: 3px;
+  border: 2px solid #525252;
+
+  a:before {
+    content: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' height='1rem' width='1rem' viewBox='0 0 24 24'%3E%3Cpath d='M4 6h7v2H4v8h7v2H2V6h2zm16 0h-7v2h7v8h-7v2h9V6h-2zm-3 5H7v2h10v-2z' fill='currentColor'/%3E%3C/svg%3E");
+  }
 
   a:link,
   a:visited {
-    color: var(--melon);
+    color: var(--dark-blue);
     text-decoration: none;
-    font-family: "Cartograph Thin Italic";
-    border-bottom: 1px solid var(--wisteria);
+    font-family: "Cartograph Regular Italic";
+    background-image: var(--gradient);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    text-decoration: underline 1px dotted;
+    display: inline-flex;
+    align-items: center;
+    text-indent: 0;
+    margin: 0;
+    transform: translate(0px, 5px);
   }
 
   a:hover {
-    font-family: "Cartograph Regular Italic";
+    animation: linkFill 1s linear;
+    animation-fill-mode: forwards;
   }
 
   i,
@@ -368,7 +275,8 @@ article {
     margin-left: calc(2vw + 10%);
     margin-right: calc(2vw + 10%);
     background: var(--gradient);
-    border-radius: 20px;
+    border-radius: 3px;
+    border: 2px solid var(--grey-border);
     padding: 20px;
     anchor-name: --quote-anchor;
     font-style: italic;
@@ -382,13 +290,15 @@ article {
     position-anchor: --quote-anchor;
     left: calc(anchor(start) - 5rem);
     transform: scaleX(-1) scale(1.5);
+    animation: upDownScale 1s linear infinite;
   }
 
   blockquote p {
     margin-bottom: 0;
     text-indent: 0;
     background: var(--bg1);
-    border-radius: 10px;
+    border-radius: 3px;
+    border: 2px solid var(--grey-border);
     padding: 2rem;
   }
 
@@ -398,6 +308,15 @@ article {
     background-clip: text !important;
     -webkit-text-fill-color: transparent;
     font-family: "Cartograph Regular Italic", serif;
+  }
+}
+
+@keyframes linkFill {
+  0% {
+    background-size: 0% 100%;
+  }
+  100% {
+    background-size: 100% 100%;
   }
 }
 
@@ -421,38 +340,47 @@ em {
 }
 
 strong {
-  font-family: "Cartograph Regular", serif;
+  font-family: "Pixelify Sans", sans-serif;
   font-weight: 400;
   color: var(--black);
   padding: 5px 10px;
-  border-end-end-radius: 5px;
-  background: #efa4a436;
-  border-left: 3px solid var(--melon);
-  border-bottom: 2px dashed var(--melon);
+  border-radius: 3px;
+  border: 2px solid var(--grey-border);
+  background-image: var(--gradient);
   font-size: 1.25em;
   anchor-name: --strong-anchor;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  display: block;
+  margin-left: calc(2vw + 10%);
+  margin-right: calc(2vw + 10%);
+  display: flex;
+  align-items: center;
   text-indent: 0;
 }
 
 strong:before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='%23efa4a436' stroke='%23efa4a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-alert-icon lucide-circle-alert'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='12'/%3E%3Cline x1='12' x2='12.01' y1='16' y2='16'/%3E%3C/svg%3E");
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none' stroke='%2319acef' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-alert-icon lucide-circle-alert'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='12'/%3E%3Cline x1='12' x2='12.01' y1='16' y2='16'/%3E%3C/svg%3E");
   position: absolute;
   position-anchor: --strong-anchor;
   left: calc(anchor(start) - 2.5rem);
-  margin-top: -5px;
   transform: scale(1.25);
+  animation: flip 1500ms infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
 }
 
-/*h1 {
-  font-family: "Cartograph Thin", serif;
-  color: var(--melon);
-  text-shadow: 0.125rem 0.125rem 0 #000000b3;
-  font-size: var(--size-step-5);
-  line-height: 1;
-}*/
+@keyframes flip {
+  0% {
+    transform: scale(1.25) rotateY(0deg);
+  }
+  80% {
+    transform: scale(1.25) rotateY(180deg);
+  }
+  90% {
+    transform: scale(1.75) rotateY(180deg);
+  }
+  100% {
+    transform: scale(1.25) rotateY(180deg);
+  }
+}
 
 h1 {
   font-family: "Cartograph Thin", serif;
@@ -581,17 +509,17 @@ ul.window {
     margin-left: calc(2vw + 1%);
     margin-right: calc(2vw + 1%);
     font-size: var(--size-step-2);
-    font-family: "Cartograph Thin Italic", serif;
-    border: 1px solid black;
+    font-family: "Pixelify Sans", serif;
+    border: 3px dotted black;
     text-indent: 25px;
 
     li.inner {
       background: var(--bg1);
-      font-size: var(--size-step--1);
+      font-size: var(--size-step-0);
       border-top-left-radius: 0px;
       border-top-right-radius: 0px;
-      font-family: "Montserrat Alternates", sans-serif;
-      border-top: 1px solid black;
+      font-family: "Pixelify Sans", serif;
+      border-top: 3px dotted black;
       border-bottom: none;
       border-left: none;
       border-right: none;
@@ -616,13 +544,25 @@ ul.inner-window {
   margin: 0;
 }
 
+.browser {
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(2vw + 10%);
+  margin-right: calc(2vw + 10%);
+  background-image: var(--gradient);
+  border-radius: 20px;
+  border: 3px dotted #000;
+  margin-bottom: 2rem;
+}
+
 .browser-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  color: white;
   text-shadow: 1px 1px 5px #000000;
+  font-family: "Pixelify Sans", sans-serif;
+  border-bottom: 3px dotted #000;
 }
 
 .browser-icons {
@@ -635,20 +575,77 @@ ul.inner-window {
   margin: 0;
 }
 
+.browser-icons.book {
+  width: 4rem;
+  transform: scale(1);
+  color: var(--black);
+}
+
 .browser-icons * {
   margin: 0;
 }
 
-.loading {
-  width: 50vw;
+.window {
+  background: var(--white);
+  padding: 20px;
+  color: var(--black);
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: var(--size-step-0);
+  margin-bottom: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.window.book {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.window p {
+  width: 55%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+.window img {
   margin: auto;
-  height: 2rem;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-image: var(--purpink);
+  border-radius: 20px;
+  filter: drop-shadow(10px 10px 5px #000);
+}
+
+.window-title {
+  font-size: var(--size-step-2);
+  margin-bottom: 0;
+  text-indent: 25px;
+  color: var(--white);
+}
+
+.loading-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 25vw;
+  min-width: 250px;
+  margin: auto;
+  background-color: #f5e8e1b0;
+  border: 2px solid #525252;
+  height: 15rem;
+  border-radius: 3px;
+}
+
+.loading {
+  width: 60%;
+  height: 1.5rem;
+  border: 2px solid #525252;
+  border-radius: 3px;
+  background-image: var(--gradient);
   background-size: 0 100%;
   background-repeat: no-repeat;
-  animation: load 5s linear infinite;
+  animation: load 5s linear 1;
+  animation-fill-mode: forwards;
+  margin-bottom: 0;
 }
 
 @keyframes load {
@@ -657,10 +654,98 @@ ul.inner-window {
   }
 }
 
+@keyframes bop {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.load-bar {
+  display: flex;
+  margin-bottom: 0;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.empty-scroll {
+  height: 40px;
+  margin-bottom: 0;
+  transform: scale(1.5);
+  animation: upDown 1s linear 5;
+}
+
+.text-scroll {
+  height: 40px;
+  margin-bottom: 0;
+  transform: scale(1.5);
+  animation: upDown 1s linear 5;
+}
+
+.loader {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  animation: spin 1.5s linear 4;
+  transform: scale(1.5);
+}
+
+@keyframes spin {
+  to {
+    transform: scale(1.5) rotate(360deg);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: scale(1.5) translateY(0);
+  }
+  50% {
+    transform: scale(1.5) translateY(-10px);
+  }
+  100% {
+    transform: scale(1.5) translateY(0);
+  }
+}
+
+@keyframes upDownScale {
+  0% {
+    transform: scaleX(-1) scale(1.5) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) scale(1.5) translateY(-10px);
+  }
+  100% {
+    transform: scaleX(-1) scale(1.5) translateY(0);
+  }
+}
+
+.top-bar {
+  display: flex;
+  background: var(--gradient);
+  font-family: "Pixelify Sans", sans-serif;
+  justify-content: space-between;
+  border-bottom: 2px solid #525252;
+  text-shadow: 1px 1px 5px #000000;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--bg2);
     color: var(--white);
+  }
+
+  header {
+    background-color: var(--bg2);
+  }
+
+  article {
+    background: var(--bg2);
+    border: 2px solid var(--bright-pink);
+
+    a:before {
+      content: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' height='24' width='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 6h7v2H4v8h7v2H2V6h2zm16 0h-7v2h7v8h-7v2h9V6h-2zm-3 5H7v2h10v-2z' fill='white'/%3E%3C/svg%3E");
+    }
   }
 
   nav {
@@ -668,14 +753,27 @@ ul.inner-window {
     & a:visited {
       color: var(--white);
       border: 0.063rem solid var(--white);
+      background-color: var(--bg2);
     }
     & a:hover {
-      color: var(--melon);
+      color: var(--bright-pink);
+      outline-color: white;
     }
   }
 
-  strong {
+  .loading-window {
+    background-color: var(--bg2);
     color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .top-bar {
+    border-bottom: 2px solid var(--white);
+    color: var(--black);
+  }
+
+  .loading {
+    border: 2px solid var(--white);
   }
 
   li.inner {
