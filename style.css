@@ -163,7 +163,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 1rem;
+  width: 100%;
+  container: body-main / inline-size;
 }
 
 body > * + * {
@@ -174,8 +175,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 75rem;
-  padding: calc(2vw + 1%);
 }
 
 .title {
@@ -230,22 +229,79 @@ nav {
   }
 }
 
+@container body-main (width >= 800px) {
+  main {
+    width: 70cqi;
+  }
+}
+
+@container body-main (width < 800px) {
+  main {
+    width: 99vw;
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  max-width: 75rem;
+  container: main-main / inline-size;
+}
+
+@container main-main (width < 800px) {
+  article {
+    width: 100%;
+  }
+}
+
+@container main-main (width >= 800px) {
+  article {
+    width: 80%;
+  }
+}
+
+@container article-main (width < 800px) {
+  .browser {
+    width: 100cqi;
+  }
+
+  blockquote {
+    width: 100cqi;
+  }
+
+  article > p {
+    width: 100cqi;
+  }
+}
+
+@container article-main (width >= 800px) {
+  .browser {
+    width: 65%;
+  }
+
+  .browser.book {
+    width: 70%;
+  }
+
+  blockquote {
+    width: 70%;
+  }
+
+  article > p {
+    width: 80%;
+  }
 }
 
 article {
-  padding: calc(1vw + 5%);
+  padding: calc(1vw + 2%);
   display: flex;
   flex-direction: column;
   width: 100%;
   background: var(--bg1);
   border-radius: 3px;
   border: 2px solid #525252;
+  container: article-main / inline-size;
 
   a:before {
     content: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' height='1rem' width='1rem' viewBox='0 0 24 24'%3E%3Cpath d='M4 6h7v2H4v8h7v2H2V6h2zm16 0h-7v2h7v8h-7v2h9V6h-2zm-3 5H7v2h10v-2z' fill='currentColor'/%3E%3C/svg%3E");
@@ -281,15 +337,18 @@ article {
   p {
     line-height: 1.7;
     text-indent: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
   }
 
   blockquote {
-    margin-left: calc(2vw + 10%);
-    margin-right: calc(2vw + 10%);
+    margin-left: auto;
+    margin-right: auto;
     background: var(--gradient);
     border-radius: 3px;
     border: 2px solid var(--grey-border);
-    padding: 20px;
+    padding: calc(1vw + 1%);
     anchor-name: --quote-anchor;
     font-style: italic;
     display: flex;
@@ -300,7 +359,7 @@ article {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23fc98c0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-message-square-quote-icon lucide-message-square-quote'%3E%3Cpath d='M14 14a2 2 0 0 0 2-2V8h-2'/%3E%3Cpath d='M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z'/%3E%3Cpath d='M8 14a2 2 0 0 0 2-2V8H8'/%3E%3C/svg%3E");
     position: absolute;
     position-anchor: --quote-anchor;
-    left: calc(anchor(start) - 5rem);
+    left: calc(anchor(start) - calc(1vw + 4%));
     transform: scaleX(-1) scale(1.5);
     animation: upDownScale 1s linear infinite;
   }
@@ -491,8 +550,8 @@ footer {
 .browser {
   display: flex;
   flex-direction: column;
-  margin-left: calc(2vw + 10%);
-  margin-right: calc(2vw + 10%);
+  margin-left: auto;
+  margin-right: auto;
   background-image: var(--gradient);
   border-radius: 20px;
   border: 3px dotted #000;
@@ -541,12 +600,15 @@ footer {
 
 .window.book {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .window p {
   margin: calc(2vw + 1%);
-  text-align: right;
+  text-align: justify;
+  flex: 1 1 200px;
+  font-size: var(--size-step-0);
 }
 
 .window img {
@@ -555,6 +617,7 @@ footer {
   filter: drop-shadow(10px 10px 5px #000);
   transition: 1s;
   width: calc(var(--size-step-5) * 4);
+  flex: 0 1 100px;
 }
 
 .window img:hover {
@@ -723,6 +786,7 @@ footer {
   .top-bar {
     border-bottom: 2px solid var(--white);
     color: var(--black);
+    text-shadow: none;
   }
 
   .loading {
@@ -733,7 +797,20 @@ footer {
     color: #000;
   }
 
-  blockquote {
-    color: #000;
+  article blockquote p {
+    background-color: var(--bg2);
+  }
+
+  .browser-bar {
+    text-shadow: none;
+  }
+
+  .window-title {
+    color: var(--black);
+  }
+
+  .window {
+    background-color: var(--bg2);
+    color: var(--white);
   }
 }
